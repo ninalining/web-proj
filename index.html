@@ -3,64 +3,59 @@
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    </head>
-    <body>
-        <!--[if lt IE 7]>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Movie Town</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+  <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-        <header>
-            <nav class="navbar navbar-expand-lg bg-body-tertiary">
-                <div class="container-fluid">
-                  <a class="navbar-brand" href="#">Movie Site</a>
-                  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                      <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="#">Movie</a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="#">TV Series</a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </nav>
-        </header>
-        <main class="container-fluid">
-            <aside class="row">
-                <section class="col-3">
-                    <form class="d-flex" role="search">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success" type="submit">Search</button>
-                      </form>
-                </section>
-                <section id="movieList" class="col-9">
-                    <div class="row">
-                        <div class="col-3">
-                            <img alt="Vinterviken" class="loadlate" data-tconst="tt0118083" height="209" src="https://m.media-amazon.com/images/M/MV5BYTU3NDMxNzctM2M0YS00MDU3LTg0MWEtZmVmODRmZjkyYjIwXkEyXkFqcGdeQXVyNjExODE1MDc@._V1_UX140_CR0,0,140,209_AL_.jpg" width="140">
-                        </div>
-                        <div class="col-9">
-                            <h2 role="title"></h2>
-                        </div>
-                    </div>
-                </section>
-            </aside>
-        </main>
-    <footer>
-        <p>Author: Nina Li<br>
-        <a href="mailto:nina.lining@gmail.com">nina.lining@gmail.com</a></p>
-    </footer>
-        <script src="./main.js" async defer></script>
-    </body>
+  <header>
+    <nav class="flex flex-space-between">
+      <a href="#" class="brand">Movie Site</a>
+      <span class="hamburger">&#9776;</span>
+      <ul class="menu">
+        <li><a href="#">Movie</a></li>
+        <li><a href="#">TV Series</a></li>
+        <li><a href="#">Community</a></li>
+      </ul>
+    </nav>  </header>
+  <main class="container-fluid">
+    <aside class="row">
+      <section class="col-3">
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </section>
+      <section id="movieList" class="col-9">
+        <div class="row">
+          <div class="col-3">
+            <img alt="Vinterviken" class="loadlate" data-tconst="tt0118083" height="209"
+              src="https://m.media-amazon.com/images/M/MV5BYTU3NDMxNzctM2M0YS00MDU3LTg0MWEtZmVmODRmZjkyYjIwXkEyXkFqcGdeQXVyNjExODE1MDc@._V1_UX140_CR0,0,140,209_AL_.jpg"
+              width="140">
+          </div>
+          <div class="col-9">
+            <h2 role="title"></h2>
+          </div>
+        </div>
+      </section>
+    </aside>
+  </main>
+  <footer>
+    <p>Author: Nina Li<br>
+      <a href="mailto:nina.lining@gmail.com">nina.lining@gmail.com</a>
+    </p>
+  </footer>
+  <script src="./main.js" async defer></script>
+</body>
+
 </html>

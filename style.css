@@ -1,0 +1,51 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+  }
+
+  .flex {
+    display: flex;
+  }
+  
+  .flex-space-between {
+    justify-content: space-between;
+  }
+  
+  nav {
+    background-color: #333;
+    overflow: hidden;
+  }
+  
+  .brand, .menu a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    padding: 15px;
+  }
+
+  .hamburger {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+    position: fixed;
+    right: 0;
+  }
+
+  
+  .menu {
+    list-style: none;
+    padding: 0;
+    display: flex;
+  }
+  
+  @media (max-width: 600px) {
+    .hamburger {
+        display: flex;
+      }
+
+    .menu {
+      flex-direction: column;
+      display: none;
+    }
+  }
