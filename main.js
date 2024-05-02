@@ -70,6 +70,76 @@ function renderAllMovies() {
     document.getElementById("movieList").innerHTML = htmlString;
 }
 
+function sortAtoZ() {
+    const data = movies.sort((a, b) => a.title.localeCompare(b.title));
+    htmlString = "";
+    for (i = 0; i < data.length; i++) {
+        htmlString += `
+        <div class="card">
+        <div class="card-left">
+          <img alt="${data[i].title}"
+            src="${data[i].image}">
+        </div>
+        <div class="card-right">
+          <h2>${data[i].title}</h2>
+          <span class="year">${data[i].released}</span>
+          <span class="length">${data[i].length}</span>
+          <span class="genre">${data[i].genre}</span>
+          <p>${data[i].description}</p>
+        </div>
+      </div>
+        `
+    }
+    document.getElementById("movieList").innerHTML = htmlString;
+}
+
+function sortZtoA() {
+    const data = movies.sort((a, b) => b.title.localeCompare(a.title));
+    htmlString = "";
+    for (i = 0; i < data.length; i++) {
+        htmlString += `
+        <div class="card">
+        <div class="card-left">
+          <img alt="${data[i].title}"
+            src="${data[i].image}">
+        </div>
+        <div class="card-right">
+          <h2>${data[i].title}</h2>
+          <span class="year">${data[i].released}</span>
+          <span class="length">${data[i].length}</span>
+          <span class="genre">${data[i].genre}</span>
+          <p>${data[i].description}</p>
+        </div>
+      </div>
+        `
+    }
+    document.getElementById("movieList").innerHTML = htmlString;
+}
+
+function filter(genre) {
+    const data = movies.filter(movie => movie.genre.toLowerCase().includes(genre));
+    htmlString = "";
+    for (i = 0; i < data.length; i++) {
+        htmlString += `
+        <div class="card">
+        <div class="card-left">
+          <img alt="${data[i].title}"
+            src="${data[i].image}">
+        </div>
+        <div class="card-right">
+          <h2>${data[i].title}</h2>
+          <span class="year">${data[i].released}</span>
+          <span class="length">${data[i].length}</span>
+          <span class="genre">${data[i].genre}</span>
+          <p>${data[i].description}</p>
+        </div>
+      </div>
+        `
+    }
+    document.getElementById("movieList").innerHTML = htmlString;
+
+}
+
 document.querySelector('.hamburger').addEventListener('click', function () {
     var menu = document.querySelector('.menu');
     if (menu.style.display === 'none') {
@@ -84,4 +154,20 @@ document.getElementById('submit').addEventListener('click', function() {
     confirm(`you have searched for ${searchValue}`);
 });
 
+document.getElementById('sort').addEventListener('change', function() {
+    const value = document.getElementById('sort').value;
+    if (value === 'aToZ') {
+        sortAtoZ();
+    }
+    if(value === 'zToA') {
+        sortZtoA();
+    }
+});
+
+document.getElementById('filter').addEventListener('change', function() {
+    const value = document.getElementById('filter').value;
+    if(value !== '') {
+        filter(value);
+    }
+})
 renderAllMovies();
