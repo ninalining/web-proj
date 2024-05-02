@@ -1,5 +1,4 @@
-const movies = [
-    {
+const movies = [{
         "title": "Ben & Gunnar",
         "length": "58 min",
         "genre": "Comedy, Drama",
@@ -32,26 +31,57 @@ const movies = [
         "image": "https://m.media-amazon.com/images/M/MV5BMTIxMjYxNjg1OV5BMl5BanBnXkFtZTcwMTQ0MjA0MQ@@._V1_UX140_CR0,0,140,209_AL_.jpg"
     },
     {
-        "title": "Ben & Gunnar",
-        "length": "58 min",
-        "genre": "Comedy, Drama",
-        "description": "A 1985 Bruce Springsteen concert is the beginning of a beautiful male friendship.",
-        "released": "1999"
+        "title": "Körkarlen",
+        "length": "107 min",
+        "genre": "Drama, Fantasy, Horror",
+        "description": "On New Year's Eve, the driver of a ghostly carriage forces a drunken man to reflect on his selfish, wasted life.",
+        "released": "1921",
+        "image":"https://m.media-amazon.com/images/M/MV5BZDJjMzU4N2MtZDkxNi00YmRkLThkZjgtYzRlNzNlYjExNzAwXkEyXkFqcGdeQXVyNzQxNDExNTU@._V1_UX140_CR0,0,140,209_AL_.jpg"
     },
     {
-        "title": "Ben & Gunnar",
-        "length": "58 min",
-        "genre": "Comedy, Drama",
-        "description": "A 1985 Bruce Springsteen concert is the beginning of a beautiful male friendship.",
-        "released": "1999"
+        "title": "Häxan",
+        "length": "87 min",
+        "genre": "Documentary, Fantasy, Horror",
+        "description": "Fictionalized documentary showing the evolution of witchcraft, from its pagan roots to its confusion with hysteria in Eastern Europe.",
+        "released": "1922",
+        "image":"https://m.media-amazon.com/images/M/MV5BNGJjOWY1NDUtZGEyZC00Y2VmLWIzZWUtZDRmODYwYmQzN2VmXkEyXkFqcGdeQXVyNDE5MTU2MDE@._V1_UY209_CR2,0,140,209_AL_.jpg"
     }
 ]
 
-document.querySelector('.hamburger').addEventListener('click', function() {
+function renderAllMovies() {
+    htmlString = "";
+    for (i = 0; i < movies.length; i++) {
+        htmlString += `
+        <div class="card">
+        <div class="card-left">
+          <img alt="${movies[i].title}"
+            src="${movies[i].image}">
+        </div>
+        <div class="card-right">
+          <h2>${movies[i].title}</h2>
+          <span class="year">${movies[i].released}</span>
+          <span class="length">${movies[i].length}</span>
+          <span class="genre">${movies[i].genre}</span>
+          <p>${movies[i].description}</p>
+        </div>
+      </div>
+        `
+    }
+    document.getElementById("movieList").innerHTML = htmlString;
+}
+
+document.querySelector('.hamburger').addEventListener('click', function () {
     var menu = document.querySelector('.menu');
     if (menu.style.display === 'none') {
-      menu.style.display = 'block';
+        menu.style.display = 'block';
     } else {
-      menu.style.display = 'none';
+        menu.style.display = 'none';
     }
-  });
+});
+
+document.getElementById('submit').addEventListener('click', function() {
+    const searchValue = document.getElementById("search").value;
+    confirm(`you have searched for ${searchValue}`);
+});
+
+renderAllMovies();
