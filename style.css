@@ -40,6 +40,10 @@ body {
     display: flex;
   }
 
+  select {
+    margin-top: 10px;
+  }
+
   aside {
     display: flex;
     flex-direction: row;
@@ -48,7 +52,9 @@ body {
   .card {
     display: flex;
     flex-direction: column;
-    width: 25%;;
+    width: 23%;
+    padding-left: 1%;
+    padding-right: 1%;
   }
 
   .sidebar-left {
@@ -90,6 +96,15 @@ body {
     /* larger than mobile */
 
     @media (max-width: 600px) {
+      aside {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .sidebar-left, .sidebar-right {
+        width: 100%;
+      }
+    
       .hamburger {
           display: flex;
         }
